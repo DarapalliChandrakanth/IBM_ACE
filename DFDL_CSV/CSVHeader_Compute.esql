@@ -1,0 +1,23 @@
+
+
+CREATE COMPUTE MODULE CSVHeader_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot.XMLNSC.root.Header.Field1 = InputRoot.DFDL.csvHeaders.header.head_field1;
+		SET OutputRoot.XMLNSC.root.Header.Field2 = InputRoot.DFDL.csvHeaders.header.head_field2;
+		SET OutputRoot.XMLNSC.root.Header.Field3 = InputRoot.DFDL.csvHeaders.header.head_field3;
+		DECLARE I INTEGER 1;
+	      DECLARE inref REFERENCE TO InputRoot.DFDL.csvHeaders.record;
+	WHILE LASTMOVE(inref) DO
+		SET OutputRoot.XMLNSC.root.body[I].ID = inref.field1;
+		SET OutputRoot.XMLNSC.root.body[I].NAME = inref.field2;
+		SET OutputRoot.XMLNSC.root.body[I].COMPANY = inref.field3;
+		
+	MOVE inref NEXTSIBLING;
+		SET I = I + 1;
+	END WHILE;
+	
+		
+	END;
+END MODULE;
