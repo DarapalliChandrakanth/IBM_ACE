@@ -1,0 +1,36 @@
+
+
+CREATE COMPUTE MODULE FixedLength_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+-- Converting fixed length to xml
+--		DECLARE I INTEGER 1;
+--  	SET OutputRoot.XMLNSC.root.Header.FieldOne = InputRoot.DFDL.fixedlength.header.head_elem1;
+--		SET OutputRoot.XMLNSC.root.Header.FieldTwo = InputRoot.DFDL.fixedlength.header.head_elem2;
+--		SET OutputRoot.XMLNSC.root.Header.FieldThree = InputRoot.DFDL.fixedlength.header.head_elem3;
+--		DECLARE ref REFERENCE TO InputRoot.DFDL.fixedlength.body[>];
+--		WHILE LASTMOVE (ref) DO
+--			SET OutputRoot.XMLNSC.root.Body[I].ID = ref.body_elem1;
+--			SET OutputRoot.XMLNSC.root.Body[I].Name = ref.body_elem2;
+--			SET OutputRoot.XMLNSC.root.Body[I].Address = ref.body_elem3;
+--			MOVE ref NEXTSIBLING;
+--			SET I = I + 1;
+--		END WHILE;
+
+-- converting xml to fixed length after parsing fixed length
+    DECLARE I INTEGER 1;
+        SET OutputRoot.DFDL.fixedlength.header.head_elem1 = InputRoot.XMLNSC.root.Header.FieldOne;
+        SET OutputRoot.DFDL.fixedlength.header.head_elem2 = InputRoot.XMLNSC.root.Header.FieldTwo;
+        SET OutputRoot.DFDL.fixedlength.header.head_elem3 = InputRoot.XMLNSC.root.Header.FieldThree;
+        
+        DECLARE inref REFERENCE TO InputRoot.XMLNSC.root.Body[>];
+        WHILE LASTMOVE(inref) DO
+        	SET OutputRoot.DFDL.fixedlength.body[I].body_elem1 = inref.ID;
+        	SET OutputRoot.DFDL.fixedlength.body[I].body_elem2 = inref.Name;    
+            SET OutputRoot.DFDL.fixedlength.body[I].body_elem3 = inref.Address;
+            SET I = I + 1;
+        MOVE inref NEXTSIBLING;
+        END WHILE;
+	END;
+END MODULE;
