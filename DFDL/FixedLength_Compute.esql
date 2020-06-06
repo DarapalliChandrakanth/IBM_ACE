@@ -2,7 +2,7 @@
 
 CREATE COMPUTE MODULE FixedLength_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
-	BEGIN
+	BEGIN      -- GITHUB changes
 		
 -- Converting fixed length to xml
 --		DECLARE I INTEGER 1;
