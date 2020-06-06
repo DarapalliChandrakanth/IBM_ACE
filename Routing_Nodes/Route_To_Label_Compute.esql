@@ -1,0 +1,20 @@
+
+
+CREATE COMPUTE MODULE Route_To_Label_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF InputRoot.XMLNSC.Root.id = 1 THEN
+			SET OutputLocalEnvironment.Destination.RouterList.DestinationData.labelName = 'LabelOne';
+			SET OutputRoot = InputRoot;
+		ELSEIF InputRoot.XMLNSC.Root.id = 1 THEN
+			SET OutputLocalEnvironment.Destination.RouterList.DestinationData.labelName = 'LabelTwo';
+			SET OutputRoot = InputRoot;
+
+			
+		END IF;
+		
+		
+		
+		
+	END;
+END MODULE;
