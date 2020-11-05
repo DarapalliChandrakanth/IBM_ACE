@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:recFixLengthFieldsFmt="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat">
+
+    <xsd:import namespace="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat" schemaLocation="IBMdefined/RecordFixLengthFieldFormat.xsd"/>
+    <xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format encoding="{$dfdl:encoding}" escapeSchemeRef="" occursCountKind="fixed" ref="recFixLengthFieldsFmt:RecordFixLengthFieldsFormat"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+	<xsd:element dfdl:lengthKind="delimited" ibmSchExtn:docRoot="true" name="FIXED_DATA_ICICI">
+		<xsd:complexType>
+			<xsd:sequence dfdl:separator="" dfdl:separatorSuppressionPolicy="anyEmpty">
+				<xsd:element dfdl:initiator="" dfdl:lengthKind="delimited" dfdl:occursCountKind="implicit" dfdl:terminator="" maxOccurs="unbounded" name="body">
+					<xsd:complexType>
+						<xsd:sequence dfdl:separator="">
+							<xsd:element dfdl:length="12" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_valu1" name="API_VERSION" type="xsd:string"/>
+							<xsd:element dfdl:length="10" ibmDfdlExtn:sampleValue="body_valu2" name="CORP_CODE" type="xsd:string"/>
+							<xsd:element dfdl:length="10" ibmDfdlExtn:sampleValue="body_valu3" name="CMPY_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="10" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value4" name="TXN_CRNCY" type="xsd:string"/>
+                            <xsd:element dfdl:length="9" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value5" name="TXN_PAYM" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value6" name="CUST_UNIQ_REF" type="xsd:string"/>
+                            <xsd:element dfdl:length="9" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value7" name="TXN_TYPE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value8" name="TXN_AMOUNT" type="xsd:string"/>
+                            <xsd:element dfdl:length="16" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value9" name="CORP_ACC_NUM" type="xsd:string"/>
+                            <xsd:element dfdl:length="15" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value10" name="CORP_IFSC_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="11" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value11" name="ORIG_USERID" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value12" name="USER_DEPARTMENT" type="xsd:string"/>
+                            <xsd:element dfdl:length="18" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value13" name="TRANSMISSION_DATE" type="xsd:string"/>
+                            <xsd:element dfdl:length="10" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value14" name="BENE_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="10" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value15" name="VALUE_DATE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value16" name="FAVOURING_NAME" type="xsd:string"/>
+                            <xsd:element dfdl:length="31" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value17" name="CUSTOMER_ACCOUNT_NUMBER" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value18" name="CUSTOMER_IFSC_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:escapeSchemeRef="recFixLengthFieldsFmt:RecordEscapeScheme" dfdl:length="17" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value19" name="CUSTOMER_AC_TYPE" type="xsd:string"/>
+                            <xsd:element dfdl:length="101" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value20" name="BENE_BANK_NAME" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value21" name="BASE_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value22" name="INSTRUMENT_NUMBER" type="xsd:string"/>
+                            <xsd:element dfdl:length="15" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value23" name="INSTRUMENT_DATE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value24" name="PAYABLE_LOCATION" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value25" name="PRINT_LOCATION" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value26" name="PRODUCT_CODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="31" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value27" name="CUSTOMER_ADDRESS_1" type="xsd:string"/>
+                            <xsd:element dfdl:length="31" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value28" name="CUSTOMER_ADDRESS_2" type="xsd:string"/>
+                            <xsd:element dfdl:length="31" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value29" name="CUSTOMER_ADDRESS_3" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value30" name="CUSTOMER_CITY" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value31" name="CUSTOMER_STATE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value32" name="CUSTOMER_PINCODE" type="xsd:string"/>
+                            <xsd:element dfdl:length="41" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value33" name="CORP_EMAIL_ADDR" type="xsd:string"/>
+                            <xsd:element dfdl:length="41" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value34" name="BENE_EMAIL_ADDR1" type="xsd:string"/>
+                            <xsd:element dfdl:length="41" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value35" name="BENE_EMAIL_ADDR2" type="xsd:string"/>
+                            <xsd:element dfdl:length="11" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value36" name="BENE_MOBILE_" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:lengthKind="explicit" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value37" name="INVOICE_NUMBER" type="xsd:string"/>
+                            <xsd:element dfdl:length="13" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value38" name="INVOICE_DATE" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value39" name="NET_AMOUNT" type="xsd:string"/>
+                            <xsd:element dfdl:length="16" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value40" name="TAX" type="xsd:string"/>
+                            <xsd:element dfdl:length="21" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value41" name="RUN_IDENTIFICATION" type="xsd:string"/>
+                            <xsd:element dfdl:initiator="" dfdl:length="20" dfdl:outputNewLine="%CR;%LF;" dfdl:terminator="" dfdl:textPadKind="padChar" ibmDfdlExtn:sampleValue="body_value42" name="INVOICE_AMOUNT" type="xsd:string"/>
+                        </xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+</xsd:schema>
